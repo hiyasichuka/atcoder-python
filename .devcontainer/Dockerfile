@@ -9,9 +9,11 @@ RUN apt-get update && \
 RUN chsh -s /bin/zsh
 
 RUN apt-get update && \
-    apt-get install -y python3.8 python3-pip pypy3 nodejs npm
+    apt-get install -y gcc-9 g++-9 python3.8 python3-pip pypy3 nodejs npm
 
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.8 30 && \
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 30 && \
+    update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 30 && \
+    update-alternatives --install /usr/bin/python python /usr/bin/python3.8 30 && \
     update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 30 && \
     update-alternatives --install /usr/bin/pypy pypy /usr/bin/pypy3 30 && \
     update-alternatives --install /usr/bin/node node /usr/bin/nodejs 30
@@ -22,11 +24,14 @@ RUN pip install numpy==1.18.2 && \
     pip install numba==0.48.0 && \
     pip install networkx==2.4
 
+RUN git clone https://github.com/atcoder/ac-library.git /lib/ac-library
+ENV CPLUS_INCLUDE_PATH /lib/ac-library
+
 RUN pip install git+https://github.com/not522/ac-library-python && \
     pip install git+https://github.com/grantjenks/python-sortedcontainers
 
-RUN pip install online-judge-tools==11.3.0
-RUN npm install -g atcoder-cli@2.1.1
+RUN pip install online-judge-tools==11.5.1
+RUN npm install -g atcoder-cli@2.2.0
 
 RUN acc config-dir && \
     acc config default-template python && \
