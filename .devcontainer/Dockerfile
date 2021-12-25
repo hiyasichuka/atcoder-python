@@ -19,6 +19,7 @@ RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 30 && \
     update-alternatives --install /usr/bin/node node /usr/bin/nodejs 30
 
 RUN pip install numpy==1.18.2 && \
+    pip install pep8==1.7.1 && \ 
     pip install scipy==1.4.1 && \
     pip install scikit-learn==0.22.2.post1 && \
     pip install numba==0.48.0 && \
