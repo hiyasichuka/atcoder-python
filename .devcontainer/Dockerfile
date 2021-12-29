@@ -18,12 +18,8 @@ RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 30 && \
     update-alternatives --install /usr/bin/pypy pypy /usr/bin/pypy3 30 && \
     update-alternatives --install /usr/bin/node node /usr/bin/nodejs 30
 
-RUN pip install numpy==1.18.2 && \
-    pip install pep8==1.7.1 && \ 
-    pip install scipy==1.4.1 && \
-    pip install scikit-learn==0.22.2.post1 && \
-    pip install numba==0.48.0 && \
-    pip install networkx==2.4
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
 RUN git clone https://github.com/atcoder/ac-library.git /lib/ac-library
 ENV CPLUS_INCLUDE_PATH /lib/ac-library

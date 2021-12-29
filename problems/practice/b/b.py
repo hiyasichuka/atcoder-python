@@ -1,2 +1,2 @@
 #!/usr/bin/env python
-N,Q=map(int,input().split())
+N, Q = map(int, input().split())
