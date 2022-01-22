@@ -10,9 +10,5 @@ services:
       - ../library:/root/library:cached
       - ../acc-template-python:/root/.config/atcoder-cli-nodejs/python:cached
       - ../.vscode:/root/.vscode:cached
-      - ../dotfiles/.zshrc:/root/.zshrc
-      - ../dotfiles/.zinit:/root/.zinit
-      - ../dotfiles/.zsh_history:/root/.zsh_history
-      - ../dotfiles/.aliases:/root/.aliases
 
     command: /bin/sh -c "while sleep 1000; do :; done"

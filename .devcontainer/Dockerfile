@@ -34,8 +34,7 @@ RUN acc config-dir && \
     acc config default-template python && \
     acc config default-test-dirname-format test
 
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
-ENV PATH $PATH:/home/root/.cargo/bin
+RUN echo 'alias accs="acc s --skip-filename -- --guess-python-interpreter pypy -w 0 -y"' > ~/.zshrc 
 
 WORKDIR /root/problems
 WORKDIR /root/library
