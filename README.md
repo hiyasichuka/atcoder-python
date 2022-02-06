@@ -2,7 +2,7 @@
 
 # 前提条件
 
-Docker Dektopをインストールしていること
+Rancher Dektopをインストールしていること
 
 # 利用方法
 
