@@ -53,6 +53,18 @@
           ]
       },
       {
+        "name": "Python: AtCoder Test5",
+        "type": "python",
+        "request": "launch",
+        "program": "${file}",
+        "cwd": "${fileDirname}",
+        "console": "integratedTerminal",
+        "args": [
+            "<",
+            "test/sample-5.in"
+        ]
+      },
+      {
           "name": "Python: Execute",
           "type": "python",
           "request": "launch",
