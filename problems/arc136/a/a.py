@@ -1,5 +1,0 @@
-n = input()
-s = input()
-s = s.replace('A','BB')
-s = s.replace('BB','A')
-print(s)

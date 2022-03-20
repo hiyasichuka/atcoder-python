@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+a, b, c, x = map(int, input().split())
+
+if(x <= a):
+    print(1.0)
+elif(x > b):
+    print(0.0)
+else:
+    print(c/(b-a))
